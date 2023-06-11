@@ -85,10 +85,10 @@ int main(){
     third->next=fourth;
     fourth->data=999;
     fourth->next=NULL;
-    // head=insertAtFirst(head,56);
+    head=insertAtFirst(head,56);
     // head=insertAtBetween(head,55,2);
     // head=insertAtLast(head,77);
-    head=insertAfterANode(head,third,69);
+    // head=insertAfterANode(head,third,69);
     print(head);
     return 1;
 }

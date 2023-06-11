@@ -18,13 +18,14 @@ struct Node* deleteAtFirst(struct Node* head){
 // in between deletion
 struct Node* deleteInBetween(struct Node* head,int index){
     struct Node*ptr=head;
+    struct Node* q=ptr->next;
 
     int i=0;
     while(i!=index-1){
         ptr=ptr->next;
+        q=q->next;
         i++;
     }
-    struct Node* q=ptr->next;
 
     ptr->next=q->next;
     free(q);
@@ -65,7 +66,6 @@ struct Node* deleteByValue(struct Node* head,int  value){
    while(ptr1->data!=value && ptr1->next!=NULL){
     ptr=ptr->next;
     ptr1=ptr1->next;
-
    }
    if(ptr1->data==value){
     ptr->next=ptr1->next;
@@ -81,6 +81,7 @@ void print(struct Node* head){
         head=head->next;
     }
 }
+
 
 int main(){
     struct Node* head;
@@ -101,9 +102,9 @@ int main(){
     fourth->next=NULL;
 
     // head=deleteAtFirst(head);
-    // head=deleteInBetween(head,2);
+    head=deleteInBetween(head,3);
     // head=delAtLast(head);
     // head=delAtIndex(head,fourth);
-    head=deleteByValue(head,99);
+    // head=deleteByValue(head,99);
     print(head);
 }
